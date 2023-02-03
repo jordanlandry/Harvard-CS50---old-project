@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+    <title>Trivia!</title>
+    <script>
+      // TODO: Add code to check answers to questions
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+      <div class="section">
+        <h2>Part 1: Multiple Choice</h2>
+        <hr />
+        <!-- TODO: Add multiple choice question here -->
+        <h3>Which guitar did Jimmy Page mainly use?</h3>
+        <button id="st" onClick="submitMultiple(this)">
+          Fender Stratocaster
+        </button>
+        <button id="lp" onClick="submitMultiple(this)">Gibson Les Paul</button>
+        <button id="sg" onClick="submitMultiple(this)">Gibson SG</button>
+        <button id="fb" onClick="submitMultiple(this)">
+          Epiphone Firebird
+        </button>
+        <p id="correctnessMc"></p>
+
+        <script>
+          function submitMultiple(e) {
+            const correctness = document.getElementById("correctnessMc");
+            const st = document.getElementById("st");
+            const lp = document.getElementById("lp");
+            const sg = document.getElementById("sg");
+            const fb = document.getElementById("fb");
+            const correctAnswer = lp;
+
+            if (e.id === correctAnswer.id) {
+              lp.style.backgroundColor = "green";
+              lp.style.color = "white";
+              correctness.textContent = "Correct!";
+            } else {
+              e.style.backgroundColor = "red";
+              e.style.color = "white";
+              correctness.textContent = "Incorrect!";
+            }
+          }
+        </script>
+      </div>
+
+      <div class="section">
+        <h2>Part 2: Free Response</h2>
+        <hr />
+        <!-- TODO: Add free response question here -->
+        <h3>What band was Jimmy Page most famously a part of?</h3>
+        <input id="input" type="text" placeholder="Answer" />
+        <button onclick="submitInput()">Submit</button>
+        <p id="correctnessI"></p>
+
+        <script>
+          function submitInput() {
+            const input = document.getElementById("input");
+            const correctness = document.getElementById("correctnessI");
+            const correctAnswers = ["ledzeppelin", 'zedleppelin']; // Lower case and no spaces to help with user typo error
+
+            let answer = input.value;
+            answer = answer.replace(/\s/g, "").toLowerCase();
+            if (correctAnswers.includes(answer)) {
+              input.style.backgroundColor = "green";
+              input.style.color = "white";
+              correctness.textContent = "Correct!";
+            } else {
+              input.style.backgroundColor = "red";
+              input.style.color = "white";
+              correctness.textContent = "Incorrect!";
+            }
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

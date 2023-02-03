@@ -1,0 +1,71 @@
+.about {
+  font-size: 3rem;
+  color: black;
+  text-transform: uppercase;
+}
+
+.likes {
+  margin: 25px;
+}
+
+.cat-img {
+  width: 250px;
+}
+
+#like-input {
+  color: blue;
+}
+
+li {
+  color: red;
+  list-style-type: circle;
+}
+
+.active {
+  color: white;
+  text-decoration: underline;
+}
+
+a {
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: min(50px, 5vw);
+  height: 60px;
+  background-color: black;
+  width: 100%;
+  justify-content: center;
+}
+
+textarea {
+  resize: none;
+  height: 200px;
+  width: 400px;
+}
+
+.contact > input {
+  width: 198px;
+}
+
+.blog-wrapper {
+  display: block;
+  margin: auto;
+  width: 90vw;
+  max-width: 1500px;
+  min-width: 500px;
+}
+
+#blog-1 {
+}
+
+.blog {
+  border: 1px solid black;
+  padding: 25px;
+  margin-bottom: 25px;
+}
+
+.blog p {
+}
